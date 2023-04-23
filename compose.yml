@@ -1,0 +1,31 @@
+services:
+  app:
+    build: ./
+    volumes:
+      - ./app/:/app
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0.32
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db-volume:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=todo
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+
+  migrate:
+    image: ghcr.io/amacneil/dbmate
+    volumes:
+      - ./db:/db
+    environment:
+      - DATABASE_URL=mysql://user:password@db:3306/todo
+    depends_on:
+      - db
+
+volumes:
+  db-volume:
