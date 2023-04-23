@@ -4,6 +4,8 @@ go 1.20
 
 require (
 	github.com/99designs/gqlgen v0.17.30
+	github.com/go-sql-driver/mysql v1.7.0
+	github.com/jinzhu/gorm v1.9.16
 	github.com/vektah/gqlparser/v2 v2.5.1
 )
 
@@ -12,6 +14,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/hashicorp/golang-lru/v2 v2.0.1 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/urfave/cli/v2 v2.24.4 // indirect
