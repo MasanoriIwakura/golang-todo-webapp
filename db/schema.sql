@@ -28,7 +28,7 @@ CREATE TABLE `schema_migrations` (
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `todos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `task` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `description` text COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`id`)
